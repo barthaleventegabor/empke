@@ -48,10 +48,10 @@ function renderTbody(empList){
             <td>${emp.city}</td>
             <td>${emp.salary}</td>
             <td>
-                <button class = "btn btn-warning">Törlés</button>
+                <button class = "btn btn-warning" onClick="deleteEmployee(${emp.id})">Törlés</button>
             </td>
             <td>
-                <button class = "btn btn-secondary">Szerkesztés</button>
+                <button class = "btn btn-secondary" onClick = "updateEmployee(${emp})">Szerkesztés</button>
             </td>
         </tr>
         `;
@@ -109,4 +109,12 @@ function addEmployee(emp){
         })
         .catch(err => console.log(err))
 
+}
+
+function deleteEmployee(id){
+    console.log("ID: ", id)
+}
+
+function updateEmployee(emp){
+    console.log(emp)
 }
