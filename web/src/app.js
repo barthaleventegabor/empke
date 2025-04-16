@@ -111,6 +111,7 @@ function addEmployee(emp){
 
 }
 
+//itt ugye a / után kell az id az url-be
 function deleteEmployee(id){
     // console.log("ID: ", id)
     const delUrl = url + "/" + id
@@ -118,6 +119,8 @@ function deleteEmployee(id){
     .then(response => response.json())
     .then(result =>{
         console.log(result)
+        getEmployees()
+        
     })
 
     
