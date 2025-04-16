@@ -119,7 +119,7 @@ function deleteEmployee(id){
     .then(response => response.json())
     .then(result =>{
         console.log(result)
-        getEmployees()
+        getEmployees() 
         
     })
 
