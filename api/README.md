@@ -4,7 +4,7 @@ Express based REST API sablon
 
 ## Install
 
-```cmd
+```cmd 
 npm install
 ```
 
