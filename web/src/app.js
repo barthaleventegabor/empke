@@ -112,7 +112,16 @@ function addEmployee(emp){
 }
 
 function deleteEmployee(id){
-    console.log("ID: ", id)
+    // console.log("ID: ", id)
+    const delUrl = url + "/" + id
+    fetch(delUrl,{method:"delete"})
+    .then(response => response.json())
+    .then(result =>{
+        console.log(result)
+    })
+
+    
+
 }
 
 function updateEmployee(emp){
