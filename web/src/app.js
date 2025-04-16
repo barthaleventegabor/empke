@@ -47,6 +47,12 @@ function renderTbody(empList){
             <td>${emp.name}</td>
             <td>${emp.city}</td>
             <td>${emp.salary}</td>
+            <td>
+                <button class = "btn btn-warning">Törlés</button>
+            </td>
+            <td>
+                <button class = "btn btn-secondary">Szerkesztés</button>
+            </td>
         </tr>
         `;
         tboyContent += row;
