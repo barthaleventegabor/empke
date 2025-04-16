@@ -47,6 +47,12 @@ function renderTbody(empList){
             <td>${emp.name}</td>
             <td>${emp.city}</td>
             <td>${emp.salary}</td>
+            <td>
+                <button class = "btn btn-warning" onClick="deleteEmployee(${emp.id})">Törlés</button>
+            </td>
+            <td>
+                <button class = "btn btn-secondary" onClick = "updateEmployee(${emp})">Szerkesztés</button>
+            </td>
         </tr>
         `;
         tboyContent += row;
@@ -103,4 +109,24 @@ function addEmployee(emp){
         })
         .catch(err => console.log(err))
 
+}
+
+//itt ugye a / után kell az id az url-be
+function deleteEmployee(id){
+    // console.log("ID: ", id)
+    const delUrl = url + "/" + id
+    fetch(delUrl,{method:"delete"})
+    .then(response => response.json())
+    .then(result =>{
+        console.log(result)
+        getEmployees()
+        
+    })
+
+    
+
+}
+
+function updateEmployee(emp){
+    console.log(emp)
 }
