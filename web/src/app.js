@@ -70,7 +70,7 @@ function renderTbody(empList){
 //create művelet
 
 saveButton.addEventListener("click", () =>{
-    // console.log("mükszik")
+    console.log("mükszik")
     // console.log(nameInput.value)
 
     //javascript objektum
@@ -83,6 +83,7 @@ saveButton.addEventListener("click", () =>{
             salary : salaryInput.value
         }
         addEmployee(emp)
+        // console.log(emp)
     }else{
         const emp = {
             id : idInput.value,
@@ -113,6 +114,7 @@ function clearFields(){
 }
 
 function addEmployee(emp){
+    console.log(emp)
     fetch(url, 
         {method : "post",
             body : JSON.stringify(emp),

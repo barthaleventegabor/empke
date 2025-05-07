@@ -8,9 +8,8 @@ const Employee = sequelize.define('employee', {
         primaryKey: true
     },
     name: { type: DataTypes.STRING,  allowNull: false  },
-    city: { type: DataTypes.STRING,  allowNull: true },
-    salary: { type: DataTypes.DOUBLE,  allowNull: true  }
-
+    city: { type: DataTypes.STRING,  allowNull: true  },
+    salary: { type: DataTypes.DOUBLE,  allowNull: true  },
 })
 
 

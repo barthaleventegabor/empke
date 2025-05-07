@@ -1,7 +1,7 @@
 {
     "app": {
         "port": 8000,
-        "key": "b6e4361dfa5ac84267c8cc30e8487ef4",
+        "key": "56bcbacac6f9d38d834c9ac1ea29e4bc",
         "log": "console.log"
     },
     "db": {
