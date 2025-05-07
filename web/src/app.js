@@ -1,27 +1,6 @@
 
 
 const tbody = document.querySelector("#tbody")
-//Read
-const url = 'http://localhost:8000/api/employees'
-
-var addMode= true;
-
-//Promise
-function getEmployees(){
-    fetch(url)
-    .then((response)=>{
-        return response.json()
-    })
-    .then((result)=>{
-        console.log(result)
-        empList = result
-        renderTbody(result.data)
-
-    })
-}
-
-getEmployees()
-
 const saveButton = document.querySelector("#saveButton")
 const addButton = document.querySelector("#addButton")
 
@@ -31,42 +10,10 @@ const cityInput = document.querySelector("#city")
 const salaryInput = document.querySelector("#salary")
 
 const empModalLabel = document.querySelector("#empModalLabel")
+//Read
+const url = 'http://localhost:8000/api/employees'
 
-
-
-
-function renderTbody(empList){
-    var tboyContent = ''
-    empList.forEach((emp)=>{
-        //ez a fura idézőjel:altgr+7
-        var row = `    
-        <tr>
-            <td>${emp.id}</td>
-            <td>${emp.name}</td>
-            <td>${emp.city}</td>
-            <td>${emp.salary}</td>
-            <td>
-                <button class = "btn btn-warning" onClick="deleteEmployee(${emp.id})">Törlés</button>
-            </td>
-            <td>
-                <button class = "btn btn-secondary"
-                onClick = "editEmployee()"
-                data-id="${emp.id}"
-                data-name="${emp.name}"
-                data-city="${emp.city}"
-                data-salary="${emp.salary}"
-                data-bs-toggle="modal" 
-                data-bs-target="#empModal"
-                >Szerkesztés</button>
-            </td>
-        </tr>
-        `;
-        tboyContent += row;
-
-    })
-    tbody.innerHTML = tboyContent
-}
-
+var addMode= true;
 //create művelet
 
 saveButton.addEventListener("click", () =>{
@@ -105,6 +52,54 @@ addButton.addEventListener("click",()=>{
     addMode = true
     empModalLabel.innerHTML = "Hozzáadás"
 })
+//Promise
+function getEmployees(){
+    fetch(url)
+    .then((response)=>{
+        return response.json()
+    })
+    .then((result)=>{
+        console.log(result)
+        empList = result
+        renderTbody(result.data)
+
+    })
+}
+
+
+function renderTbody(empList){
+    var tboyContent = ''
+    empList.forEach((emp)=>{
+        //ez a fura idézőjel:altgr+7
+        var row = `    
+        <tr>
+            <td>${emp.id}</td>
+            <td>${emp.name}</td>
+            <td>${emp.city}</td>
+            <td>${emp.salary}</td>
+            <td>
+                <button class = "btn btn-warning" onClick="deleteEmployee(${emp.id})">Törlés</button>
+            </td>
+            <td>
+                <button class = "btn btn-secondary"
+                onClick = "editEmployee()"
+                data-id="${emp.id}"
+                data-name="${emp.name}"
+                data-city="${emp.city}"
+                data-salary="${emp.salary}"
+                data-bs-toggle="modal" 
+                data-bs-target="#empModal"
+                >Szerkesztés</button>
+            </td>
+        </tr>
+        `;
+        tboyContent += row;
+
+    })
+    tbody.innerHTML = tboyContent
+}
+
+
 
 function clearFields(){
     idInput.value = ""
@@ -196,3 +191,5 @@ function updateEmployee(emp){
     addMode = true
     empModalLabel.innerHTML = "Hozzáadás"
 }
+
+getEmployees()
