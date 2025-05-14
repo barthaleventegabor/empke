@@ -349,3 +349,13 @@
 [0mOPTIONS /api/employees/20 [32m204[0m 0.167 ms - 0[0m
 [0mDELETE /api/employees/20 [32m200[0m 6.747 ms - 25[0m
 [0mGET /api/employees [32m200[0m 2.502 ms - 26[0m
+[0mGET /api/employees [32m200[0m 19.648 ms - 155[0m
+[0mOPTIONS /api/employees/23 [32m204[0m 0.769 ms - 0[0m
+[0mDELETE /api/employees/23 [32m200[0m 11.201 ms - 25[0m
+[0mGET /api/employees [32m200[0m 4.131 ms - 26[0m
+[0mOPTIONS /api/employees [32m204[0m 0.322 ms - 0[0m
+[0mPOST /api/employees [32m201[0m 194.091 ms - 153[0m
+[0mGET /api/employees [32m200[0m 3.718 ms - 153[0m
+[0mOPTIONS /api/employees/25 [32m204[0m 0.209 ms - 0[0m
+[0mPUT /api/employees/25 [32m200[0m 74.548 ms - 153[0m
+[0mGET /api/employees [32m200[0m 3.275 ms - 155[0m
