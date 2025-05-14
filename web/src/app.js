@@ -72,15 +72,14 @@ function renderTbody(empList){
     empList.forEach((emp)=>{
         //ez a fura idézőjel:altgr+7
         var row = `    
-        <tr>
-            <td>${emp.id}</td>
-            <td>${emp.name}</td>
-            <td>${emp.city}</td>
-            <td>${emp.salary}</td>
-            <td>
-                <button class = "btn btn-warning" onClick="deleteEmployee(${emp.id})">Törlés</button>
-            </td>
-            <td>
+        <tr class="miniRow">
+            <td class="mini miniId">${emp.id}</td>
+            <td class="mini miniName">${emp.name}</td>
+            <td class="mini miniCity">${emp.city}</td>
+            <td class="mini miniSalary">${emp.salary}</td>
+
+            <td class="mini buttons">
+            <button class = "btn btn-warning me-3" onClick="deleteEmployee(${emp.id})">Törlés</button>
                 <button class = "btn btn-secondary"
                 onClick = "editEmployee()"
                 data-id="${emp.id}"
