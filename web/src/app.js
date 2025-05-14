@@ -1,6 +1,6 @@
 
 
-const tbody = document.querySelector("#tbody")
+const cards = document.querySelector("#cards")
 const saveButton = document.querySelector("#saveButton")
 const addButton = document.querySelector("#addButton")
 
@@ -72,14 +72,15 @@ function renderTbody(empList){
     empList.forEach((emp)=>{
         //ez a fura idézőjel:altgr+7
         var row = `    
-        <tr class="miniRow">
-            <td class="mini miniId">${emp.id}</td>
-            <td class="mini miniName">${emp.name}</td>
-            <td class="mini miniCity">${emp.city}</td>
-            <td class="mini miniSalary">${emp.salary}</td>
-
-            <td class="mini buttons">
-            <button class = "btn btn-warning me-3" onClick="deleteEmployee(${emp.id})">Törlés</button>
+            <div class="card m-3" style="width: 280px;">
+              <div class="card-header">
+                <h2>Név: ${emp.name}</h2>
+            </div>
+            
+            <div class="card-body">
+                <h5 class="card-title">Település: ${emp.city}</h5>
+                <p class="card-text">Fizetés: ${emp.salary}</p>
+                <button class = "btn btn-warning me-3" onClick="deleteEmployee(${emp.id})">Törlés</button>
                 <button class = "btn btn-secondary"
                 onClick = "editEmployee()"
                 data-id="${emp.id}"
@@ -89,13 +90,13 @@ function renderTbody(empList){
                 data-bs-toggle="modal" 
                 data-bs-target="#empModal"
                 >Szerkesztés</button>
-            </td>
-        </tr>
+            </div>
+            </div>
         `;
         tboyContent += row;
 
     })
-    tbody.innerHTML = tboyContent
+    cards.innerHTML = tboyContent
 }
 
 
