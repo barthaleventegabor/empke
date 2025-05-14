@@ -359,3 +359,14 @@
 [0mOPTIONS /api/employees/25 [32m204[0m 0.209 ms - 0[0m
 [0mPUT /api/employees/25 [32m200[0m 74.548 ms - 153[0m
 [0mGET /api/employees [32m200[0m 3.275 ms - 155[0m
+[0mOPTIONS /api/employees [32m204[0m 0.260 ms - 0[0m
+[0mPOST /api/employees [32m201[0m 9.979 ms - 150[0m
+[0mGET /api/employees [32m200[0m 3.196 ms - 282[0m
+[0mOPTIONS /api/employees [32m204[0m 0.295 ms - 0[0m
+[0mPOST /api/employees [32m201[0m 9.666 ms - 152[0m
+[0mGET /api/employees [32m200[0m 4.014 ms - 409[0m
+[0mPOST /api/employees [32m201[0m 8.088 ms - 154[0m
+[0mGET /api/employees [32m200[0m 3.088 ms - 537[0m
+[0mOPTIONS /api/employees [32m204[0m 0.222 ms - 0[0m
+[0mPOST /api/employees [32m201[0m 7.449 ms - 153[0m
+[0mGET /api/employees [32m200[0m 3.587 ms - 665[0m
