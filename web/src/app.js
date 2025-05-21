@@ -8,10 +8,12 @@ const idInput = document.querySelector("#id")
 const nameInput = document.querySelector("#name")
 const cityInput = document.querySelector("#city")
 const salaryInput = document.querySelector("#salary")
+const deleteModal = document.querySelector("#deleteModal")
 
 const empModalLabel = document.querySelector("#empModalLabel")
 //Read
 const url = 'http://localhost:8000/api/employees'
+var idForDelete = -1
 
 var addMode= true;
 //create művelet
@@ -79,7 +81,7 @@ function renderTbody(empList){
             <td class="mini miniSalary">${emp.salary}</td>
 
             <td class="mini buttons">
-            <button class = "btn btn-warning me-3" onClick="deleteEmployee(${emp.id})">Törlés</button>
+            <button class = "btn btn-warning me-3" onClick="askDeleteEmployee(${emp.id})">Törlés</button>
                 <button class = "btn btn-secondary"
                 onClick = "editEmployee()"
                 data-id="${emp.id}"
@@ -126,9 +128,20 @@ function addEmployee(emp){
 }
 
 //itt ugye a / után kell az id az url-be
-function deleteEmployee(id){
-    // console.log("ID: ", id)
-    const delUrl = url + "/" + id
+function askDeleteEmployee(id){
+    const modal = new bootstrap.Modal(
+        deleteModal
+    );
+    modal.show()
+    
+    idForDelete = id
+
+
+}
+
+function deleteEmployee(){
+    console.log("ID: ", id)
+    const delUrl = url + "/" + idForDelete
     fetch(delUrl,{method:"delete"})
     .then(response => response.json())
     .then(result =>{
@@ -137,10 +150,7 @@ function deleteEmployee(id){
         
     })
 
-    
-
 }
-
 
 
 function editEmployee(){

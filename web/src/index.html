@@ -28,7 +28,7 @@
             <div class="empform"></div>
               <div class="input">
                 <label for="id">Id</label>
-                <input type="text" id="id" class="form-control" readonly>
+                <input type="text" id="id" class="form-control" readonly disabled>
               </div>
 
               <div class="input">
@@ -71,8 +71,30 @@
         <!-- Ide -->
       </tbody>
     </table>
-
+    
   </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Törlés figyelmeztetés</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Biztosan törli?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="deleteEmployee()">Törlés</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <script src="bootstrap.js"></script>
   <script src="app.js"></script>  
 </body>
