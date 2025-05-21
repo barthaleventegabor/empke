@@ -81,8 +81,8 @@ function renderTbody(empList){
             <td class="mini miniSalary">${emp.salary}</td>
 
             <td class="mini buttons">
-            <button class = "btn btn-warning me-3" onClick="askDeleteEmployee(${emp.id})">Törlés</button>
-                <button class = "btn btn-secondary"
+            <button class = "btn btn-warning me-3 my-1" onClick="askDeleteEmployee(${emp.id})">Törlés</button>
+                <button class = "btn btn-secondary my-1"
                 onClick = "editEmployee()"
                 data-id="${emp.id}"
                 data-name="${emp.name}"
